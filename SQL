@@ -1,0 +1,35 @@
+CREATE TABLE scores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    player_name TEXT,
+    score INTEGER
+);
+
+
+
+INSERT INTO scores (player_name, score) VALUES ("Alice", 100);
+INSERT INTO scores (player_name, score) VALUES ("Bob", 200);
+INSERT INTO scores (player_name, score) VALUES ("Charlie", 300);
+
+select * from scores;
+
+UPDATE scores SET score=150 WHERE player_name="Alice";
+
+select * from scores;
+
+
+ALTER TABLE scores ADD COLUMN emotion TEXT;
+
+INSERT INTO scores (player_name, score,emotion)
+VALUES ('Alice', 100,'happy');
+
+INSERT INTO scores (player_name, score, emotion)
+VALUES ('Bob', 75, 'excited');
+
+INSERT INTO scores (player_name, score, emotion)
+VALUES ('Charlie', 200, 'frustrated');
+
+select * from scores;
+
+DELETE FROM scores WHERE player_name="Bob";
+
+select * from scores
